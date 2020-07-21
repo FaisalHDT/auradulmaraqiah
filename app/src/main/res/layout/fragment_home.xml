@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:background="@color/layer"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.HomeFragment">
+
+   <com.google.android.gms.ads.AdView
+       android:id="@+id/adStream"
+       ads:adSize="BANNER"
+       ads:adUnitId="@string/banner_id"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:orientation="vertical">
+      <androidx.viewpager.widget.ViewPager
+          android:layout_marginTop="4dp"
+          android:layout_marginStart="4dp"
+          android:layout_marginEnd="4dp"
+          android:id="@+id/viewpager"
+          android:layout_width="match_parent"
+          android:layout_height="150dp"/>
+
+
+
+
+
+      <LinearLayout
+          android:layout_centerInParent="true"
+          android:id="@+id/linearLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:layout_marginTop="4dp"
+          android:layout_marginStart="4dp"
+          android:layout_marginEnd="4dp"
+
+          >
+
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:weightSum="4"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+                  <ImageView
+                      android:clickable="true"
+                      android:id="@+id/yasin"
+                      android:layout_marginTop="16dp"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:src="@drawable/yasinn"/>
+                  <TextView
+                      android:textSize="16sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Ya-sin"
+                      android:textColor="@color/colorPrimaryText"
+                      android:fontFamily="@font/gothambook"
+                      android:layout_gravity="center_horizontal"
+                      android:padding="4dp"/>
+               </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_gravity="center"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+                  <ImageView
+                      android:clickable="true"
+                      android:id="@+id/doa_kmpl"
+                      android:layout_marginTop="16dp"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:src="@drawable/tangandoa"/>
+                  <TextView
+                      android:textSize="16sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Do'a"
+                      android:textColor="@color/colorPrimaryText"
+                      android:fontFamily="@font/gothambook"
+                      android:layout_gravity="center_horizontal"
+                      android:padding="4dp"/>
+               </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+                  <ImageView
+                      android:id="@+id/sejarah"
+                      android:clickable="true"
+                      android:layout_marginTop="16dp"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:src="@drawable/sejarah"/>
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Sejarah"
+                      android:textColor="@color/colorPrimaryText"
+                      android:fontFamily="@font/gothambook"
+                      android:layout_gravity="center_horizontal"
+                      android:padding="4dp"/>
+               </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+                  <ImageView
+                      android:clickable="true"
+                      android:id="@+id/audio"
+                      android:layout_marginTop="16dp"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:src="@drawable/audio"/>
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Audio"
+                      android:textColor="@color/colorPrimaryText"
+                      android:fontFamily="@font/gothambook"
+                      android:layout_gravity="center_horizontal"
+                      android:padding="4dp"/>
+               </LinearLayout>
+
+            </LinearLayout>
+
+         </LinearLayout>
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_margin="4dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <TextView
+             android:textAlignment="center"
+             android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="18sp"
+
+             android:textColor="@color/colorPrimaryText"
+             android:fontFamily="@font/gothambook"
+             android:text="Jadwal Sholat"/>
+         <Spinner
+             android:textAlignment="center"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="50dp"
+             android:layout_marginEnd="50dp"
+            android:id="@+id/spinner"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:visibility="gone"
+            android:id="@+id/alamat"/>
+         <TextView
+             android:id="@+id/tanggal"
+             android:fontFamily="@font/gothambook"
+             android:textColor="@color/colorPrimaryText"
+             android:textAlignment="center"
+             android:layout_marginTop="4dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="16sp"
+             android:text="--:--"/>
+         <ImageView
+             android:layout_gravity="center"
+             android:layout_width="wrap_content"
+             android:layout_height="30dp"
+             android:src="@drawable/borderbawah"/>
+         <TableLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/textView"
+             android:layout_margin="10dp">
+
+            <TableRow android:layout_margin="5dp">
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"
+                   android:textSize="16sp"
+                   android:id="@+id/textView2"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/textView"
+                   android:layout_weight="1"
+                   android:text="Subuh" />
+               <TextView
+                   android:textAlignment="center"
+                   android:textSize="16sp"
+                   android:id="@+id/txtSubuh"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="--:--"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"/>
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"
+                   android:textSize="16sp"
+                   android:id="@+id/textView4"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="Dzuhur" />
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textSize="16sp"
+                   android:id="@+id/txtDzuhur"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="--:--"
+                   android:textColor="@color/colorPrimaryText" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"
+                   android:textSize="16sp"
+                   android:id="@+id/textView5"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="Ashar" />
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"
+                   android:textSize="16sp"
+                   android:id="@+id/txtAshar"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="--:--" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"
+                   android:textSize="16sp"
+                   android:id="@+id/textView6"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="Maghrib" />
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textSize="16sp"
+                   android:id="@+id/txtMaghrib"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textColor="@color/colorPrimaryText"
+                   android:text="--:--" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"
+                   android:textSize="16sp"
+                   android:id="@+id/textView7"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="Isya" />
+
+               <TextView
+                   android:textAlignment="center"
+                   android:fontFamily="@font/gothambook"
+                   android:textColor="@color/colorPrimaryText"
+                   android:textSize="16sp"
+                   android:id="@+id/txtIsya"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="--:--" />
+            </TableRow>
+         </TableLayout>
+         <ImageView
+             android:layout_gravity="center"
+             android:layout_width="wrap_content"
+             android:layout_height="30dp"
+             android:src="@drawable/borderbawah"/>
+      </LinearLayout>
+   </LinearLayout>
+</ScrollView>
+
+
+
+</LinearLayout>

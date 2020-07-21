@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "862224603233",
+    "firebase_url": "https://maraqitta-limat.firebaseio.com",
+    "project_id": "maraqitta-limat",
+    "storage_bucket": "maraqitta-limat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862224603233:android:26ecb85f58a215349cf220",
+        "android_client_info": {
+          "package_name": "com.daskull.auradulmaraqiyah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862224603233-6hol449d5in2bt52cgrt1uunlgaoa3u0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.daskull.auradulmaraqiyah",
+            "certificate_hash": "6817030204ed16a8b0b5634756dce3d74bb1fde6"
+          }
+        },
+        {
+          "client_id": "862224603233-v821mh1ve8r7mb1e5cb7hoi0jtsnramm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5wpeiHjzucqfDqVQ8jch_DBlQb0oE9iA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862224603233-v821mh1ve8r7mb1e5cb7hoi0jtsnramm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

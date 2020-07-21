@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/layer"
+
+    tools:context=".Fragment.RadioFragment">
+
+    <com.google.android.gms.ads.AdView
+        android:layout_alignParentTop="true"
+        android:id="@+id/ads4"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/radio"
+        android:layout_below="@id/ads5"/>
+
+    
+   <WebView
+       android:layout_below="@id/imgRadio"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/radioweb"/>
+
+    <com.google.android.gms.ads.AdView
+        android:layout_below="@+id/ads4"
+        android:layout_marginTop="4dp"
+        android:id="@+id/ads5"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
