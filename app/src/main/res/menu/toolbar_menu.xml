@@ -5,4 +5,8 @@
         android:id="@+id/about"
         app:showAsAction="never"
         android:title="About"/>
+    <item android:icon="@drawable/ic_error_black_24dp"
+        android:id="@+id/sejarah"
+        app:showAsAction="never"
+        android:title="Sejarah"/>
 </menu>

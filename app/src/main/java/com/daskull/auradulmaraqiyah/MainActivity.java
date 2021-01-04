@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.daskull.auradulmaraqiyah.Fragment.DoaFragment;
+import com.daskull.auradulmaraqiyah.Fragment.FragmentSejarah;
 import com.daskull.auradulmaraqiyah.Fragment.HomeFragment;
 import com.daskull.auradulmaraqiyah.Fragment.RadioFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -68,7 +69,11 @@ public class MainActivity extends AppCompatActivity {
             //Kode disini akan di eksekusi saat tombol about di klik
             Intent notifikasi = new Intent(MainActivity.this,AboutActivity.class);
             startActivity(notifikasi);
-
+        }else if (item.getItemId()==R.id.sejarah){
+            FragmentSejarah fragmentSejarah = new FragmentSejarah();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragmentSejarah)
+                    .addToBackStack(null)
+                    .commit();
         }
 
         return super.onOptionsItemSelected(item);

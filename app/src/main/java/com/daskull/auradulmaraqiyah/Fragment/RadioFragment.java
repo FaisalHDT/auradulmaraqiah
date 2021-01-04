@@ -60,11 +60,10 @@ public class RadioFragment extends Fragment {
         progressDialog.setTitle("Loading . . .");
 
         ads3=v.findViewById(R.id.ads4);
-        ads4 = v.findViewById(R.id.ads5);
-        MobileAds.initialize(getActivity(), "ca-app-pub-6617430244106452~9153275293");
+        MobileAds.initialize(getActivity(), "ca-app-pub-3940256099942544~3347511713");
         AdRequest request = new AdRequest.Builder().build();
         ads3.loadAd(request);
-        ads4.loadAd(request);
+
         progressDialog.show();
 
         personalRadio.getSettings().setJavaScriptEnabled(true);

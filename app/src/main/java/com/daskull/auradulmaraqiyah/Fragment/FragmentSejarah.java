@@ -33,12 +33,8 @@ public class FragmentSejarah extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_sejarah, container, false);
-        ads2 = itemView.findViewById(R.id.ads2);
 
-        MobileAds.initialize(getActivity(), "ca-app-pub-6617430244106452~9153275293");
 
-        AdRequest request = new AdRequest.Builder().build();
-        ads2.loadAd(request);
 
         return itemView;
     }

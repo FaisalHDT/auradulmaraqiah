@@ -1,11 +1,9 @@
 package com.daskull.auradulmaraqiyah.Fragment;
 
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.net.Uri;
+
 import android.os.Bundle;
 
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.daskull.auradulmaraqiyah.Adapter.AuradAdapter;
 import com.daskull.auradulmaraqiyah.R;
@@ -61,7 +57,7 @@ public class DoaFragment extends Fragment {
 
     private void loadData() {
         list.add(new Aurad("َاَعُوْذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيْمِ","Aku berlindung kepada Allah dari godaan syetan yang terkutuk"));
-        list.add(new Aurad("بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ","Aku berlindung kepada Allah dari godaan syetan yang terkutuk"));
+        list.add(new Aurad("بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ","Dengan nama Allah yang Maha pengasih lagi Maha penyayang"));
         list.add(new Aurad("اَلْحَمْدُ للهِ رَبِّ الْعَالَمِيْن","Segala puji bagi Allah Tuhan yang menciptakan alam semesta"));
         list.add(new Aurad("اَشْهَدُاَنْ لَا اِلٰهَ اِلاَّ الله","Aku bersaksi bahwa tidak ada tuhan yang sebenarnya patut disembah kecuali Allah"));
         list.add(new Aurad("وَاَشْهَدُاَنَّ مُحَمَّدًارَسُوْلُ الله","Dan aku bersaksi bahwa Nabi Muhammad utusan Allah"));

@@ -8,12 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.FragmentSejarah">
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/ads2"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 
   <ScrollView
       android:layout_width="match_parent"

@@ -34,13 +34,9 @@ public class FragmentDetailDoa extends Fragment {
         View itemView = inflater.inflate(R.layout.fragment_detail_doa, container, false);
         ayat =  itemView.findViewById(R.id.ayat_doa_detail);
         arti = itemView.findViewById(R.id.arti_doa_detail);
-        ads6 = itemView.findViewById(R.id.ads6);
         judul = itemView.findViewById(R.id.judul);
 
-        MobileAds.initialize(getActivity(), "ca-app-pub-6617430244106452~9153275293");
-
         AdRequest request = new AdRequest.Builder().build();
-        ads6.loadAd(request);
 
         loadDetailDoa();
         return itemView;

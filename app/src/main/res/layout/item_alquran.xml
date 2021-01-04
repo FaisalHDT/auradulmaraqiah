@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:padding="4dp"
+        android:textStyle="bold"
+        android:layout_marginEnd="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lpmq"
+        android:text="ayat"
+        android:textAlignment="viewEnd"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/ayatAlquran"/>
+    <TextView
+        android:layout_marginTop="2dp"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lpmq"
+        android:text="artinya"
+        android:layout_marginStart="4dp"
+        android:id="@+id/artiAlquran"/>
+    <View
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED" />
+
+</LinearLayout>

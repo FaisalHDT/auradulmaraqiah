@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -52,7 +53,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-import retrofit2.Call;
+
 import retrofit2.Callback;
 import retrofit2.Response;
 
@@ -62,26 +63,14 @@ import static androidx.core.content.ContextCompat.checkSelfPermission;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class HomeFragment extends Fragment  {
 
-    String username_key_new = "";
-    LocationManager locationManager;
-    TextView txtSubuh, txttanggal ;
-    EditText alamat;
-    TextView txtDzuhur;
-    TextView txtAshar;
-    TextView txtMaghrib;
-    TextView txtIsya;
-    double latitude;
-    double longitude;
     ViewPager viewPager;
-    String lok_long, lok_lat;
-    ImageView yasin, doa_kmpl, sejarah, audio;
+
+    LinearLayout yasin, doa_kmpl, sejarah, audio;
     AdView ads1;
 
-    String USERNAME_KEY = "usernamekey";
-    String username_key = "";
-    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -95,26 +84,14 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
         View itemView = inflater.inflate(R.layout.fragment_home, container, false);
         viewPager = itemView.findViewById(R.id.viewpager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getActivity());
-        txtSubuh = itemView.findViewById(R.id.txtSubuh);
-        txtDzuhur = itemView.findViewById(R.id.txtDzuhur);
-        txtAshar = itemView.findViewById(R.id.txtAshar);
-        txtMaghrib = itemView.findViewById(R.id.txtMaghrib);
-        txtIsya = itemView.findViewById(R.id.txtIsya);
-        txttanggal = itemView.findViewById(R.id.tanggal);
         yasin = itemView.findViewById(R.id.yasin);
         doa_kmpl = itemView.findViewById(R.id.doa_kmpl);
         sejarah = itemView.findViewById(R.id.sejarah);
         audio = itemView.findViewById(R.id.audio);
         ads1 = itemView.findViewById(R.id.adStream);
-        alamat = itemView.findViewById(R.id.alamat);
 
-        Spinner spinner = itemView.findViewById(R.id.spinner);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),R.array.kabupaten,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(HomeFragment.this);
-        MobileAds.initialize(getActivity(), "ca-app-pub-6617430244106452~9153275293");
+        MobileAds.initialize(getActivity(), "ca-app-pub-3940256099942544~3347511713");
 
         AdRequest request = new AdRequest.Builder().build();
         ads1.loadAd(request);
@@ -134,9 +111,9 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
             @Override
             public void onClick(View v) {
 
-                YasinFragment yasinFragment = new YasinFragment();
+                AlquranFragment alquranFragment = new AlquranFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, yasinFragment)
+                        .replace(R.id.fragment_container, alquranFragment)
                         .addToBackStack(null)
                         .commit();
 
@@ -159,9 +136,9 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
         sejarah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentSejarah fragmentSejarah = new FragmentSejarah();
+                TasbihFragment tasbihFragment = new TasbihFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragmentSejarah)
+                        .replace(R.id.fragment_container, tasbihFragment)
                         .addToBackStack(null)
                         .commit();
             }
@@ -177,103 +154,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
         return itemView;
     }
 
-
-    private void actionLoad() {
-        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<Items> call = apiInterface.getJadwalSholat(alamat.getText().toString());
-        call.enqueue(new Callback<Items>() {
-            @Override
-            public void onResponse(Call<Items> call, Response<Items> response) {
-                Log.d("Data ", "" + response.body().getItems());
-                List<Jadwal> jadwal = response.body().getItems();
-                loadData(jadwal);
-            }
-
-            @Override
-            public void onFailure(Call<Items> call, Throwable t) {
-                Log.d("Data ", "" + t.getMessage());
-            }
-        });
-
-
-    }
-
-    private void loadData(List<Jadwal> jadwal) {
-        for (Jadwal data : jadwal) {
-            txttanggal.setText(data.getTanggal());
-            txtSubuh.setText(data.getFajar());
-            txtDzuhur.setText(data.getZuhur());
-            txtAshar.setText(data.getAshar());
-            txtMaghrib.setText(data.getMaghrib());
-            txtIsya.setText(data.getIsya());
-        }
-    }
-
-
-    private void checkPermission() {
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
-        ) {//Can add more as per requirement
-
-            ActivityCompat.requestPermissions(getActivity(),
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
-                    123);
-        }
-
-    }
-
-    public boolean checkLocationPermission() {
-        if (ContextCompat.checkSelfPermission(getActivity(),
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-                new AlertDialog.Builder(getActivity())
-                        .setTitle(R.string.title_location_permission)
-                        .setMessage(R.string.text_location_permission)
-                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                //Prompt the user once explanation has been shown
-                                ActivityCompat.requestPermissions(getActivity(),
-                                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                        MY_PERMISSIONS_REQUEST_LOCATION);
-                            }
-                        })
-                        .create()
-                        .show();
-
-
-            } else {
-                // No explanation needed, we can request the permission.
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_LOCATION);
-            }
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        lok_long = parent.getItemAtPosition(position).toString();
-        alamat.setText(lok_long);
-        lok_lat = String.valueOf(alamat);
-        actionLoad();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }
 
 
