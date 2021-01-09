@@ -28,6 +28,7 @@ public class Adapter extends ArrayAdapter<Item> {
         this.listData = listData;
     }
 
+
     @SuppressLint("SetTextI18n")
     @NonNull
     @Override
@@ -45,7 +46,7 @@ public class Adapter extends ArrayAdapter<Item> {
         //nf.format(i);
        //text.setTypeface(typeface);
         Integer ayat = data.getVerseID();
-        text.setText(nf.format(ayat)+data.getAyahText());
+        text.setText(data.getAyahText()+" ("+nf.format(ayat)+")");
         artinya.setText(data.getIndoText());
 
         return views;

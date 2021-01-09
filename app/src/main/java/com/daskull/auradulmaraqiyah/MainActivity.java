@@ -65,16 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.about) {
-            //Kode disini akan di eksekusi saat tombol about di klik
-            Intent notifikasi = new Intent(MainActivity.this,AboutActivity.class);
-            startActivity(notifikasi);
-        }else if (item.getItemId()==R.id.sejarah){
-            FragmentSejarah fragmentSejarah = new FragmentSejarah();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragmentSejarah)
-                    .addToBackStack(null)
-                    .commit();
-        }
 
         return super.onOptionsItemSelected(item);
     }

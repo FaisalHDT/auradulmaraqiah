@@ -1,76 +1,33 @@
 package com.daskull.auradulmaraqiyah.Fragment;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Build;
+
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Lifecycle;
-import androidx.viewpager.widget.ViewPager;
 
-import android.telecom.Call;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 
+import android.widget.LinearLayout;
+
+
+import com.daskull.auradulmaraqiyah.AboutActivity;
 import com.daskull.auradulmaraqiyah.R;
-import com.daskull.auradulmaraqiyah.ViewPagerAdapter;
-import com.daskull.auradulmaraqiyah.model.Items;
-import com.daskull.auradulmaraqiyah.model.Jadwal;
-import com.daskull.auradulmaraqiyah.network.ApiClient;
-import com.daskull.auradulmaraqiyah.network.ApiInterface;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
-
-
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import static android.content.Context.MODE_PRIVATE;
-import static androidx.core.content.ContextCompat.checkSelfPermission;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment  {
 
-    ViewPager viewPager;
-
-    LinearLayout yasin, doa_kmpl, sejarah, audio;
+    LinearLayout yasin, doa_kmpl, sejarah, audio,tentang,tasbih;
     AdView ads1;
-
-
 
     public HomeFragment() {
         // Required empty public constructor
@@ -82,11 +39,11 @@ public class HomeFragment extends Fragment  {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_home, container, false);
-        viewPager = itemView.findViewById(R.id.viewpager);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getActivity());
         yasin = itemView.findViewById(R.id.yasin);
         doa_kmpl = itemView.findViewById(R.id.doa_kmpl);
         sejarah = itemView.findViewById(R.id.sejarah);
+        tasbih=itemView.findViewById(R.id.tasbih);
+        tentang=itemView.findViewById(R.id.tentang);
         audio = itemView.findViewById(R.id.audio);
         ads1 = itemView.findViewById(R.id.adStream);
 
@@ -133,7 +90,7 @@ public class HomeFragment extends Fragment  {
         });
 
 
-        sejarah.setOnClickListener(new View.OnClickListener() {
+        tasbih.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TasbihFragment tasbihFragment = new TasbihFragment();
@@ -144,13 +101,25 @@ public class HomeFragment extends Fragment  {
             }
         });
 
+        sejarah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentSejarah fragmentSejarah = new FragmentSejarah();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, fragmentSejarah)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
-        viewPager.setAdapter(viewPagerAdapter);
+        tentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pindah =new Intent(getActivity(), AboutActivity.class);
+                startActivity(pindah);
+            }
+        });
 
-
-
-
-       // actionLoad();
         return itemView;
     }
 
