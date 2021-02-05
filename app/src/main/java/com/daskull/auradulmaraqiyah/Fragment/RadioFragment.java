@@ -60,7 +60,7 @@ public class RadioFragment extends Fragment {
         progressDialog.setTitle("Loading . . .");
 
         ads3=v.findViewById(R.id.ads4);
-        MobileAds.initialize(getActivity(), "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(getActivity(), "ca-app-pub-6617430244106452~9153275293");
         AdRequest request = new AdRequest.Builder().build();
         ads3.loadAd(request);
 

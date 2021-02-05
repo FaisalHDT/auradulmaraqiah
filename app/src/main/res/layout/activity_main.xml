@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/bgprimary"
+            android:background="@color/md_green_500"
             android:layout_alignParentTop="true"
             android:fitsSystemWindows="true"
             app:menu="@menu/toolbar_menu"

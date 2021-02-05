@@ -69,7 +69,7 @@ public class AudioFragment extends Fragment {
         pause=itemView.findViewById(R.id.playpause);
         ads7=itemView.findViewById(R.id.ads7);
         stop = itemView.findViewById(R.id.btnstop);
-        MobileAds.initialize(getActivity(), "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(getActivity(), "ca-app-pub-6617430244106452~9153275293");
 
         AdRequest request = new AdRequest.Builder().build();
         ads7.loadAd(request);
